@@ -17,4 +17,8 @@ features:
   - title: 点歌插件
     details: 命令[/点歌 你好], 监听收到消息时自动发送歌曲卡片
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/MusicPlugin
+
+  - title: 自动回复
+    details: 监听收到文本消息时自动回复对应内容
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/AutoReply
 ---
