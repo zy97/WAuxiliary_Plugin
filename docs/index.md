@@ -25,4 +25,8 @@ features:
   - title: 历史今天
     details: 命令[/历史今天], 监听收到消息时自动发送历史今天图片
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/HistoryToday
+
+  - title: 进退群提醒
+    details: 监听群成员变动时自动发送对应内容
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/JoinAndLeftGroupTips
 ---
