@@ -13,4 +13,8 @@ features:
   - title: 文转音
     details: 命令[#tts 你好], 长按发送按钮将文本转语音发出
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/TextToSpeech
+
+  - title: 点歌插件
+    details: 命令[/点歌 你好], 监听收到消息时自动发送歌曲卡片
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/MusicPlugin
 ---
