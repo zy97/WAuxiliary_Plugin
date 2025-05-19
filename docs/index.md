@@ -9,4 +9,8 @@ features:
   - title: 示例插件
     details: 监听长按发送按钮, 发送 Hello World 文本
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/DemoPlugin
+
+  - title: 文转音
+    details: 命令[#tts 你好], 长按发送按钮将文本转语音发出
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/TextToSpeech
 ---
