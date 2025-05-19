@@ -33,4 +33,12 @@ features:
   - title: 被拍自动回复
     details: 监听到被拍头时自动回复对应内容
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/PatAutoReply
+
+  - title: 文转图
+    details: 命令[/作图 你好 世界], 长按发送按钮将文本转图片发出
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/TextToImg
+
+  - title: 智能聊天
+    details: 需修改API域名,路径,密钥,模型,好友wxid等参数, 监听收到消息时自动聊天
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/OpenAiChat
 ---
