@@ -22,7 +22,7 @@ void sendTextImg(String title, String subTitle) {
     final int SUBTITLE_TEXT_COLOR = Color.BLACK;
     final int IMAGE_QUALITY = 100;
     final String IMAGE_PATH = pluginDir + "/temp.png";
-    final String APP_ID = "wxe3ad19e142df87b3";
+    final String APP_ID = "wxe3ad19e142df87b3";    // 麻豆约拍
     // ******************************
 
     Bitmap bitmap = null;
@@ -133,8 +133,8 @@ void sendTextImg(String title, String subTitle) {
 }
 
 boolean onLongClickSendBtn(String text) {
-    if (text.startsWith("作图 ")) {
-        String str = text.substring(3);
+    if (text.startsWith("/作图 ")) {
+        String str = text.substring(4);
         int index = str.indexOf(" ");
         if (index == -1) {
             log("错误: 输入格式不正确，未找到副标题");
