@@ -42,7 +42,11 @@ features:
     details: 需修改API域名,路径,密钥,模型,好友wxid等参数, 监听收到消息时自动聊天
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/OpenAiChat
 
-  - title: 文生图@CkBc
-    details: 命令`/作图 Corn Hub`，长按`发送`按钮生成并发送图片
-    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/CkBc/TXT-to-IMG
+  - title: 文生图@CkBcDD
+    details: 命令[/作图 Corn Hub]，长按发送按钮生成并发送图片
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/CkBcDD/TXT-to-IMG
+
+  - title: 点歌@CkBcDD
+    details: 命令[/点歌 Never Gonna Give You Up]，监听收到消息时自动发送歌曲卡片
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/CkBcDD/Fetch-Music
 ---
