@@ -42,7 +42,7 @@ export default defineConfig({
       provider: 'local'
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/HdShare/WAuxilary_Plugin' }
+      { icon: 'github', link: 'https://github.com/HdShare/WAuxiliary_Plugin' }
     ],
   }
 })
