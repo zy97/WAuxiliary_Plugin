@@ -50,15 +50,15 @@ features:
     details: 命令[/点歌 Never Gonna Give You Up], 监听收到消息时自动发送歌曲卡片
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/CkBcDD/Fetch-Music
 
-   - title: 看看腿@yfishyon
+  - title: 看看腿@yfishyon
     details: 输入框输入[黑丝]/[白丝], 长按发送看看腿
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/yfishyon/sese
 
-   - title: 龙图@yfishyon
+  - title: 龙图@yfishyon
     details: 输入框输入[龙图], 长按发送成为龙王
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/yfishyon/long
 
-   - title: 举牌@周芷越
+  - title: 举牌@周芷越
     details: 输入框输入[举牌 内容], 生成举牌
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/周芷越/jupai
 ---
