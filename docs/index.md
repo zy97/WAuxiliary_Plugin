@@ -42,6 +42,10 @@ features:
     details: 需修改API域名,路径,密钥,模型,好友wxid等参数, 监听收到消息时自动聊天
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/OpenAiChat
 
+  - title: 表情合成@hd
+    details: 监听收到[系统表情1+系统表情2]时自动合成新表情并发送
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/EmojiMix
+
   - title: 文生图@CkBcDD
     details: 命令[/作图 Corn Hub], 长按发送按钮生成并发送图片
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/CkBcDD/TXT-to-IMG
