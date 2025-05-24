@@ -46,6 +46,10 @@ features:
     details: 监听收到[系统表情1+系统表情2]时自动合成新表情并发送
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/EmojiMix
 
+  - title: 进群邀请@hd
+    details: 监听私聊收到[进群]时自动发送群聊邀请(需修改群聊wxid)
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/JoinGroupInvite
+
   - title: 文生图@CkBcDD
     details: 命令[/作图 Corn Hub], 长按发送按钮生成并发送图片
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/CkBcDD/TXT-to-IMG
