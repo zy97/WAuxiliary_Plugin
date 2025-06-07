@@ -22,6 +22,10 @@ features:
     details: 监听收到文本消息时自动回复对应内容
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/AutoReply
 
+  - title: 自动回复艾特@hd
+    details: 监听收到艾特消息时自动艾特询问干嘛
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/AutoReplyAt
+
   - title: 历史今天@hd
     details: 命令[/历史今天], 监听收到消息时自动发送历史今天图片
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/HistoryToday
