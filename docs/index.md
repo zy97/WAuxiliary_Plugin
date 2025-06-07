@@ -54,6 +54,10 @@ features:
     details: 监听私聊收到[进群]时自动发送群聊邀请(需修改群聊wxid)
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/JoinGroupInvite
 
+  - title: 自动同意好友@hd
+    details: 监听收到好友申请时自动通过
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/AutoAgreeFriend
+
   - title: 文生图@CkBcDD
     details: 命令[/作图 Corn Hub], 长按发送按钮生成并发送图片
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/CkBcDD/TXT-to-IMG
