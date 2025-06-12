@@ -14,12 +14,19 @@ MsgInfo {
     String getTalker();// 发送者(接收的 群聊Id/好友Id)
     String getSendTalker();// 发送者(群聊中 发送者Id)
     String getContent();// 消息内容
+    String getMsgSource();// 消息来源
+    List<String> getAtUserList();// 艾特列表
 
+    boolean isAnnounceAll();// 公告通知全体
+    boolean isNotifyAll();// 艾特通知全体
+    boolean isAtMe();// 艾特我
+    
     boolean isPrivateChat();// 私聊
     boolean isGroupChat();// 群聊
     boolean isOfficialAccount();// 公众号
     boolean isOpenIM();// 企业微信
     boolean isSend();// 自己发的
+    
     boolean isText();// 文本
     boolean isImage();// 图片
     boolean isVoice();// 语音
