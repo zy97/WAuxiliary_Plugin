@@ -62,6 +62,10 @@ features:
     details: 监听收到好友申请时自动通过
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/AutoAgreeFriend
 
+  - title: 自定义头像@hd
+    details: 自定义好友或者群聊头像
+    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/CustomAvatar
+
   - title: 文生图@CkBcDD
     details: 命令[/作图 Corn Hub], 长按发送按钮生成并发送图片
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/CkBcDD/TXT-to-IMG
