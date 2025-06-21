@@ -16,7 +16,14 @@ import me.hd.wauxv.plugin.api.callback.PluginCallBack;
 
 void saveMsgToFile(String outputPath, String avatarPath, String name, String msg) {
     try {
-        // 长度
+        // 昵称长度
+        Paint namePaint = new Paint();
+        namePaint.setAntiAlias(true);
+        namePaint.setColor(Color.BLACK);
+        namePaint.setTextSize(32f);
+        float nameWidth = namePaint.measureText(name);
+
+        // 消息长度
         Paint msgPaint = new Paint();
         msgPaint.setAntiAlias(true);
         msgPaint.setColor(Color.BLACK);
@@ -24,7 +31,7 @@ void saveMsgToFile(String outputPath, String avatarPath, String name, String msg
         float msgWidth = msgPaint.measureText(msg);
 
         // 画布
-        Bitmap canvasBitmap = Bitmap.createBitmap((int) (174 + 32 + msgWidth + 32 + 12), 180, Bitmap.Config.ARGB_8888);
+        Bitmap canvasBitmap = Bitmap.createBitmap((int) (174 + 32 + Math.max(nameWidth, msgWidth) + 32 + 12), 180, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(canvasBitmap);
         canvas.drawColor(Color.parseColor("#EDEDED"));
 
@@ -40,17 +47,15 @@ void saveMsgToFile(String outputPath, String avatarPath, String name, String msg
         canvas.drawBitmap(roundedAvatar, 32, 14, null);
 
         // 昵称
-        Paint namePaint = new Paint();
-        namePaint.setAntiAlias(true);
-        namePaint.setColor(Color.BLACK);
-        namePaint.setTextSize(32f);
         canvas.drawText(name, 176, 48, namePaint);
 
-        // 消息
+        // 气泡
         Paint bubblePaint = new Paint();
         bubblePaint.setAntiAlias(true);
         bubblePaint.setColor(Color.WHITE);
         canvas.drawRoundRect(174, 64, 32 + 174 + msgWidth + 32, 170, 20, 20, bubblePaint);
+
+        // 消息
         canvas.drawText(msg, 206, 134, msgPaint);
 
         // 输出
@@ -71,7 +76,8 @@ void onHandleMsg(Object msgInfoBean) {
             String quoteMsgSendTalker = msgInfoBean.getQuoteMsg().getSendTalker();
             String quoteMsgAvatarUrl = getAvatarUrl(quoteMsgSendTalker);
             String quoteMsgDisplayName = msgInfoBean.getQuoteMsg().getDisplayName();
-            String quoteMsgContent = msgInfoBean.getQuoteMsg().getContent();
+            String quoteMsgType = msgInfoBean.getQuoteMsg().getType();
+            String quoteMsgContent = quoteMsgType.equals("1") ? msgInfoBean.getQuoteMsg().getContent() : "暂不支持的引用类型";
             if (!quoteMsgAvatarUrl.equals("")) {
                 String avatarTmpPath = pluginDir + "/avatar.png";
                 String messageTmpPath = pluginDir + "/message.png";
@@ -79,6 +85,8 @@ void onHandleMsg(Object msgInfoBean) {
                     public void onSuccess(File file) {
                         saveMsgToFile(messageTmpPath, avatarTmpPath, quoteMsgDisplayName, quoteMsgContent);
                         sendImage(talker, messageTmpPath);
+                        new File(avatarTmpPath).delete();
+                        new File(messageTmpPath).delete();
                     }
             
                     public void onError(Exception e) {
