@@ -72,12 +72,20 @@ void onHandleMsg(Object msgInfoBean) {
     if (msgInfoBean.isSend() && msgInfoBean.isQuote()) {
         String talker = msgInfoBean.getTalker();
         String title = msgInfoBean.getQuoteMsg().getTitle();
-        if (title.contains("/q")) {
+        if (title.startsWith("/q")) {
             String quoteMsgSendTalker = msgInfoBean.getQuoteMsg().getSendTalker();
             String quoteMsgAvatarUrl = getAvatarUrl(quoteMsgSendTalker);
             String quoteMsgDisplayName = msgInfoBean.getQuoteMsg().getDisplayName();
-            String quoteMsgType = msgInfoBean.getQuoteMsg().getType();
-            String quoteMsgContent = quoteMsgType.equals("1") ? msgInfoBean.getQuoteMsg().getContent() : "暂不支持的引用类型";
+
+            String[] parts = title.split(" ", 2);
+            String quoteMsgContent;
+            if (parts.length > 1) {
+                quoteMsgContent = parts[1];
+            } else {
+                String quoteMsgType = msgInfoBean.getQuoteMsg().getType();
+                quoteMsgContent = quoteMsgType.equals("1") ? msgInfoBean.getQuoteMsg().getContent() : "暂不支持的引用类型";
+            }
+
             if (!quoteMsgAvatarUrl.equals("")) {
                 String avatarTmpPath = pluginDir + "/avatar.png";
                 String messageTmpPath = pluginDir + "/message.png";
@@ -88,7 +96,7 @@ void onHandleMsg(Object msgInfoBean) {
                         new File(avatarTmpPath).delete();
                         new File(messageTmpPath).delete();
                     }
-            
+
                     public void onError(Exception e) {
                         sendText(talker, "下载头像异常:" + e.getMessage());
                     }
