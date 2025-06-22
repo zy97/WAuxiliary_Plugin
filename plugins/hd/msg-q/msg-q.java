@@ -87,8 +87,8 @@ void onHandleMsg(Object msgInfoBean) {
             }
 
             if (!quoteMsgAvatarUrl.equals("")) {
-                String avatarTmpPath = pluginDir + "/avatar.png";
-                String messageTmpPath = pluginDir + "/message.png";
+                String avatarTmpPath = cacheDir + "/avatar.png";
+                String messageTmpPath = cacheDir + "/message.png";
                 download(quoteMsgAvatarUrl, avatarTmpPath, null, new PluginCallBack.DownloadCallback() {
                     public void onSuccess(File file) {
                         saveMsgToFile(messageTmpPath, avatarTmpPath, quoteMsgDisplayName, quoteMsgContent);

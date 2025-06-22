@@ -11,9 +11,12 @@ void onHandleMsg(Object msgInfoBean) {
             String quoteMsgSendTalker = msgInfoBean.getQuoteMsg().getSendTalker();
             String avatarUrl = getAvatarUrl(quoteMsgSendTalker);
             if (!avatarUrl.equals("")) {
-                download("https://api.52vmy.cn/api/avath/rua?url=" + avatarUrl, pluginDir + "/avatar.gif", null, new PluginCallBack.DownloadCallback() {
+                String api = "https://api.52vmy.cn/api/avath/rua?url=" + avatarUrl;
+                String path = cacheDir + "/avatar.gif";
+                download(api, path, null, new PluginCallBack.DownloadCallback() {
                     public void onSuccess(File file) {
                         sendEmoji(talker, file.getAbsolutePath());
+                        file.delete();
                     }
             
                     public void onError(Exception e) {
