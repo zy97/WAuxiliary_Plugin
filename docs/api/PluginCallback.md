@@ -27,9 +27,3 @@ void onMemberChange(String type, String groupWxid, String userWxid, String userN
 ```java
 void onNewFriend(String wxid, String ticket, int scene);
 ```
-
-## 自定义头像路径
-
-```java
-String onGetAvatarPath(String wxid);
-```

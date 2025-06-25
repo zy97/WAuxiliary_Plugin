@@ -62,10 +62,6 @@ features:
     details: 监听收到好友申请时自动通过
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/AutoAgreeFriend
 
-  - title: 自定义头像@hd
-    details: 自定义好友或者群聊头像
-    link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/CustomAvatar
-
   - title: 摸头@hd
     details: 命令[/rua]引用他人消息, 即可生成摸头GIF并发送
     link: https://github.com/HdShare/WAuxiliary_Plugin/tree/main/plugins/hd/Avatar-rua

@@ -36,6 +36,14 @@ String getFriendName(String friendWxid);
 String getFriendName(String friendWxid, String roomId);
 ```
 
+## 取头像链接
+
+```java
+void getAvatarUrl(String username);
+
+void getAvatarUrl(String username, boolean isBigHeadImg);
+```
+
 ## 取群聊列表
 
 ```java
