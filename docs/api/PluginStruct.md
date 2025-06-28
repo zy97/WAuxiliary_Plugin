@@ -45,7 +45,7 @@ MsgInfo {
     boolean isSystem();// 系统
     boolean isLink();// 链接
     boolean isTransfer();// 转账
-    boolean isRedPacket();// 红包
+    boolean isRedBag();// 红包
     boolean isVideoNumberVideo();// 视频号视频
     boolean isNote();// 接龙
     boolean isQuote();// 引用
