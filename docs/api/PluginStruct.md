@@ -23,6 +23,7 @@ MsgInfo {
 
     QuoteMsg getQuoteMsg();// 引用消息
     PatMsg getPatMsg();// 拍一拍消息
+    FileMsg getFileMsg();// 文件消息
 
     boolean isPrivateChat();// 私聊
     boolean isGroupChat();// 群聊
@@ -68,5 +69,12 @@ PatMsg {
     String getPattedUser();// 被拍者Id
     String getTemplate();// 模板内容
     String getCreateTime();// 创建时间
+}
+
+FileMsg {
+    String getTitle();// 文件标题
+    String getSize();// 文件字节
+    String getExt();// 文件后缀
+    String getMd5();// 文件MD5
 }
 ```
