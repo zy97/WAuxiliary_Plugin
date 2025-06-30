@@ -82,8 +82,7 @@ void onHandleMsg(Object msgInfoBean) {
             if (parts.length > 1) {
                 quoteMsgContent = parts[1];
             } else {
-                String quoteMsgType = msgInfoBean.getQuoteMsg().getType();
-                quoteMsgContent = quoteMsgType.equals("1") ? msgInfoBean.getQuoteMsg().getContent() : "暂不支持的引用类型";
+                quoteMsgContent = msgInfoBean.getQuoteMsg().getContent();
             }
 
             if (!quoteMsgAvatarUrl.equals("")) {
