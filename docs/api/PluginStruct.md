@@ -58,7 +58,6 @@ QuoteMsg {
     String getTitle();// 回复标题
     String getMsgSource();// 消息来源
     String getSendTalker();// 发送者Id
-    long getCreateTime();// 创建时间
     String getDisplayName();// 显示昵称
     String getTalker();// 聊天Id(群聊/私聊)
     int getType();// 消息类型
