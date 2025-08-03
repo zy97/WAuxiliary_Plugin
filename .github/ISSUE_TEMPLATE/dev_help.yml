@@ -1,0 +1,24 @@
+name: 开发帮助
+description: 开发帮助
+labels: [ "Dev" ]
+title: "[开发帮助] "
+body:
+  - type: textarea
+    attributes:
+      label: 问题描述
+      placeholder: |
+        1. 
+        2. 
+        3.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: latest
+    attributes:
+      label: 其他要求
+      options:
+        - label: 我在 [Issue](https://github.com/HdShare/WAuxiliary_Plugin/issues) 没有发现相同问题
+          required: true
+        - label: 我已知晓不按照模板提供的指示进行填写, 则我的 Issue 可能会被无条件删除
+          required: true
