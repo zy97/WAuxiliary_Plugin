@@ -9,6 +9,9 @@
 - `context`  
   上下文对象
 
+- `moduleVer`  
+  模块版本
+
 - `cacheDir`  
   缓存路径
 
