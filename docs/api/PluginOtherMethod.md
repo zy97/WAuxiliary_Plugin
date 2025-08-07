@@ -25,7 +25,7 @@ void notify(String title, String text);
 ## 日志
 
 ```java
-void log(String text);
+void log(Object msg);
 ```
 
 ## 提示
