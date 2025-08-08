@@ -43,7 +43,7 @@ void saveMsgToFile(String outputPath, String avatarPath, String name, String msg
         Paint avatarPaint = new Paint();
         avatarPaint.setAntiAlias(true);
         avatarPaint.setShader(new BitmapShader(scaledAvatar, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP));
-        avatarCanvas.drawRoundRect(0, 0, 108, 108, 10f, 10f, avatarPaint);
+        avatarCanvas.drawRoundRect(0f, 0f, 108f, 108f, 10f, 10f, avatarPaint);
         canvas.drawBitmap(roundedAvatar, 32, 14, null);
 
         // 昵称
@@ -53,7 +53,7 @@ void saveMsgToFile(String outputPath, String avatarPath, String name, String msg
         Paint bubblePaint = new Paint();
         bubblePaint.setAntiAlias(true);
         bubblePaint.setColor(Color.WHITE);
-        canvas.drawRoundRect(174, 64, 32 + 174 + msgWidth + 32, 170, 20, 20, bubblePaint);
+        canvas.drawRoundRect(174f, 64f, (float) 32 + 174 + msgWidth + 32, 170f, 20f, 20f, bubblePaint);
 
         // 消息
         canvas.drawText(msg, 206, 134, msgPaint);
