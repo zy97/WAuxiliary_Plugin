@@ -92,6 +92,12 @@ void sendWebpageCard(String talker, JSONObject jsonObj);
 void sendCipherMsg(String talker, String title, String content);
 ```
 
+## 发送小程序消息
+
+```java
+void sendNoteMsg(String talker, String title, String pagePath, String ghName);
+```
+
 ## 发送接龙消息
 
 ```java
