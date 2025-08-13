@@ -53,7 +53,7 @@ void saveMsgToFile(String outputPath, String avatarPath, String name, String msg
         Paint bubblePaint = new Paint();
         bubblePaint.setAntiAlias(true);
         bubblePaint.setColor(Color.WHITE);
-        canvas.drawRoundRect(174f, 64f, (float) 32 + 174 + msgWidth + 32, 170f, 20f, 20f, bubblePaint);
+        canvas.drawRoundRect(174f, 64f, (float) (32 + 174 + msgWidth + 32), 170f, 20f, 20f, bubblePaint);
 
         // 消息
         canvas.drawText(msg, 206, 134, msgPaint);
