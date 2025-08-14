@@ -93,3 +93,12 @@ void verifyUser(String wxid, String ticket, int scene);
 
 void verifyUser(String wxid, String ticket, int scene, int privacy);
 ```
+
+## 修改好友标签
+
+```java
+
+void modifyContactLabelList(String username, String labelName);
+
+void modifyContactLabelList(String username, List labelNames);
+```
