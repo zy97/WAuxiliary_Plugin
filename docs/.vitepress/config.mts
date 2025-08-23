@@ -17,13 +17,15 @@ export default defineConfig({
         items: [
           { text: "全局变量", link: "/api/PluginGlobal" },
           { text: "回调方法", link: "/api/PluginCallback" },
-          { text: "配置方法", link: "/api/PluginConfigMethod" },
-          { text: "联系方法", link: "/api/PluginContactMethod" },
-          { text: "网络方法", link: "/api/PluginHttpMethod" },
-          { text: "消息方法", link: "/api/PluginMsgMethod" },
-          { text: "其他方法", link: "/api/PluginOtherMethod" },
-          { text: "友圈方法", link: "/api/PluginSnsMethod" },
           { text: "相关结构", link: "/api/PluginStruct" },
+          { text: "音频方法", link: "/api/method/PluginAudioMethod" },
+          { text: "配置方法", link: "/api/method/PluginConfigMethod" },
+          { text: "联系方法", link: "/api/method/PluginContactMethod" },
+          { text: "网络方法", link: "/api/method/PluginHttpMethod" },
+          { text: "媒体方法", link: "/api/method/PluginMediaMsgMethod" },
+          { text: "消息方法", link: "/api/method/PluginMsgMethod" },
+          { text: "其他方法", link: "/api/method/PluginOtherMethod" },
+          { text: "友圈方法", link: "/api/method/PluginSnsMethod" },
         ]
       }
     ],

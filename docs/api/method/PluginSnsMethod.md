@@ -1,7 +1,7 @@
 # 朋友圈方法
 
 ::: warning 警告
-本文档适用于 WAuxiliary v1.2.4 版本
+本文档适用于 WAuxiliary v1.2.5 版本
 :::
 
 ## 上传文字

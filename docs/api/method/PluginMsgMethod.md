@@ -1,7 +1,7 @@
 # 消息方法
 
 ::: warning 警告
-本文档适用于 WAuxiliary v1.2.4 版本
+本文档适用于 WAuxiliary v1.2.5 版本
 :::
 
 ## 发送文本消息
@@ -15,7 +15,7 @@ void sendText(String talker, String content);
 ```java
 void sendVoice(String talker, String sendPath);
 
-void sendVoice(String talker, String sendPath, int voiceLength);
+void sendVoice(String talker, String sendPath, int duration);
 ```
 
 ## 发送图片消息
@@ -56,34 +56,6 @@ void sendShareCard(String talker, String wxid);
 void sendLocation(String talker, String poiName, String label, String x, String y, String scale);
 
 void sendLocation(String talker, JSONObject jsonObj);
-```
-
-## 发送媒体消息
-
-```java
-void sendMediaMsg(String talker, MediaMessage mediaMessage, String appId);
-```
-
-## 发送文本卡片
-
-```java
-void sendTextCard(String talker, String text, String appId);
-```
-
-## 发送音乐卡片
-
-```java
-void sendMusicCard(String talker, String title, String description, String playUrl, String infoUrl, String appId);
-
-void sendMusicCard(String talker, JSONObject jsonObj);
-```
-
-## 发送网页卡片
-
-```java
-void sendWebpageCard(String talker, String title, String description, String webpageUrl, String appId);
-
-void sendWebpageCard(String talker, JSONObject jsonObj);
 ```
 
 ## 发送密文消息
