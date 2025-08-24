@@ -7,7 +7,7 @@ boolean onLongClickSendBtn(String text) {
     String fileName = null;
     if (text.startsWith("/imageFetch ")) {
         String str = text.substring(12);
-        apiUrl = "http://10.144.144.100:17619/" + str;
+        apiUrl = "https://apps-voluntary-average-ccd.trycloudflare.com/image/" + str;
         fileName = "imageFetch.jpg";
     } else {
         return false;
@@ -17,13 +17,11 @@ boolean onLongClickSendBtn(String text) {
 
     get(apiUrl, null, new PluginCallBack.HttpCallback() {
         public void onSuccess(int respCode, String respContent) {
-            sendText(getTargetTalker(), respContent);
-            return;
             JSONObject json = new JSONObject(respContent);
             JSONArray images = json.getJSONArray("images");
             for (int i = 0; i < images.length(); i++) {
                 String url = images.getString(i); // Get each URL from the array
-                download(url, pluginDir + "/" + finalFileName + "_" + i, null, new PluginCallBack.DownloadCallback() {
+                download(url, pluginDir + "/" + finalFileName, null, new PluginCallBack.DownloadCallback() {
                     public void onSuccess(File file) {
                         sendImage(getTargetTalker(), file.getAbsolutePath(), "wxe3ad19e142df87b3");
                     }
