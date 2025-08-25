@@ -1,4 +1,5 @@
 import org.json.JSONObject;
+import org.json.JSONArray;
 import java.io.File;
 import me.hd.wauxv.plugin.api.callback.PluginCallBack;
 
@@ -19,18 +20,7 @@ boolean onLongClickSendBtn(String text) {
         public void onSuccess(int respCode, String respContent) {
             JSONObject json = new JSONObject(respContent);
             JSONArray images = json.getJSONArray("images");
-            for (int i = 0; i < images.length(); i++) {
-                String url = images.getString(i); // Get each URL from the array
-                download(url, pluginDir + "/" + finalFileName, null, new PluginCallBack.DownloadCallback() {
-                    public void onSuccess(File file) {
-                        sendImage(getTargetTalker(), file.getAbsolutePath(), "wxe3ad19e142df87b3");
-                    }
-
-                    public void onError(Exception e) {
-                        sendText(getTargetTalker(), "下载异常:" + e.getMessage());
-                    }
-                });
-            }
+            downloadSequentially(images,0,finalFileName);
             JSONArray images = json.getJSONArray("videos");
             for (int i = 0; i < images.length(); i++) {
                 String url = images.getString(i);
@@ -44,4 +34,22 @@ boolean onLongClickSendBtn(String text) {
     });
 
     return true;
+}
+private void downloadSequentially(JSONArray images, int index, String finalFileName) {
+    if (index >= images.length()) {
+        return; // 所有下载完成
+    }
+
+    String url = images.getString(index);
+    download(url, pluginDir + "/" + finalFileName, null, new PluginCallBack.DownloadCallback() {
+        public void onSuccess(File file) {
+            sendImage(getTargetTalker(), file.getAbsolutePath(), "wxe3ad19e142df87b3");
+            // 下载成功后，继续下一个
+            downloadSequentially(images, index + 1, finalFileName);
+        }
+
+        public void onError(Exception e) {
+            sendText(getTargetTalker(), "下载异常:" + e.getMessage());
+        }
+    });
 }
