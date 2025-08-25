@@ -19,8 +19,9 @@ boolean onLongClickSendBtn(String text) {
     get(apiUrl, null, new PluginCallBack.HttpCallback() {
         public void onSuccess(int respCode, String respContent) {
             JSONObject json = new JSONObject(respContent);
-            JSONArray images = json.getJSONArray("images");
-            downloadSequentially(images,0,finalFileName);
+            String title = json.getString("title");
+            sendText(getTargetTalker(), "文章标题:" + title);
+            downloadSequentially(json, 0, finalFileName);
             JSONArray images = json.getJSONArray("videos");
             for (int i = 0; i < images.length(); i++) {
                 String url = images.getString(i);
@@ -35,9 +36,16 @@ boolean onLongClickSendBtn(String text) {
 
     return true;
 }
-private void downloadSequentially(JSONArray images, int index, String finalFileName) {
+
+private void downloadSequentially(JSONObject json, int index, String finalFileName) {
+    JSONArray images = json.getJSONArray("images");
     if (index >= images.length()) {
-        return; // 所有下载完成
+        JSONArray videos = json.getJSONArray("videos");
+        for (int i = 0; i < videos.length(); i++) {
+            String url = videos.getString(i);
+            sendText(getTargetTalker(), "视频地址:" + url);
+        }
+        return;
     }
 
     String url = images.getString(index);
