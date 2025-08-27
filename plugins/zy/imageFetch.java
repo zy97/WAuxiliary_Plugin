@@ -53,7 +53,7 @@ private void downloadSequentially(JSONObject json, int index, String finalFileNa
     String url = images.getString(index);
     int index = url.lastIndexOf(".");
     String ext = url.substring(index + 1);
-    string finalFileName = "";
+    string finalFileName = "imageFetch.jpg";
     if(ext == "jpg")
         finalFileName = finaljpgFileName;
     if(ext == "png")
@@ -66,7 +66,7 @@ private void downloadSequentially(JSONObject json, int index, String finalFileNa
         public void onSuccess(File file) {
             sendImage(getTargetTalker(), file.getAbsolutePath(), "wxe3ad19e142df87b3");
             // 下载成功后，继续下一个
-            downloadSequentially(images, index + 1, finalFileName);
+            downloadSequentially(json, index + 1, finalFileName);
         }
 
         public void onError(Exception e) {
