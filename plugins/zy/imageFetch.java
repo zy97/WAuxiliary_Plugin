@@ -9,12 +9,14 @@ boolean onLongClickSendBtn(String text) {
     if (text.startsWith("/imageFetch ")) {
         String str = text.substring(12);
         apiUrl = "https://apps-voluntary-average-ccd.trycloudflare.com/image/" + str;
-        fileName = "imageFetch.jpg";
     } else {
         return false;
     }
 
-    final String finalFileName = fileName;
+    final String finaljpgFileName = "imageFetch.jpg";
+    final String finalpngFileName = "imageFetch.png";
+    final String finalgifFileName = "imageFetch.gif";
+    final String finalwebpFileName = "imageFetch.webp";
 
     get(apiUrl, null, new PluginCallBack.HttpCallback() {
         public void onSuccess(int respCode, String respContent) {
@@ -49,6 +51,17 @@ private void downloadSequentially(JSONObject json, int index, String finalFileNa
     }
 
     String url = images.getString(index);
+    int index = url.lastIndexOf(".");
+    String ext = url.substring(index + 1);
+    string finalFileName = "";
+    if(ext == "jpg")
+        finalFileName = finaljpgFileName;
+    if(ext == "png")
+        finalFileName = finalpngFileName;
+    if(ext == "gif")
+        finalFileName = finalgifFileName;
+    if(ext == "webp")
+        finalFileName = finalwebpFileName;
     download(url, pluginDir + "/" + finalFileName, null, new PluginCallBack.DownloadCallback() {
         public void onSuccess(File file) {
             sendImage(getTargetTalker(), file.getAbsolutePath(), "wxe3ad19e142df87b3");
