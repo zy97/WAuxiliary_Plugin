@@ -65,25 +65,26 @@ private void downloadSequentially(JSONObject json, int index) {
 
     download(url, pluginDir + "/" + finalFileName, null, new PluginCallBack.DownloadCallback() {
         public void onSuccess(File file) {
-            // String fileName = file.getAbsolutePath();
-            // sendText(getTargetTalker(), fileName);
-            // int idx = fileName.lastIndexOf(".");
-            // String ext = fileName.substring(idx + 1);
-            // if (ext.equals("jpg")) {
-            // sendImage(getTargetTalker(), file.getAbsolutePath(), "wxe3ad19e142df87b3");
-            // }
-            // if (ext.equals("png")) {
-            // sendImage(getTargetTalker(), file.getAbsolutePath(), "wxe3ad19e142df87b3");
-            // }
-            // if (ext.equals("gif")) {
-            // shareFile(getTargetTalker(), "", file.getAbsolutePath(),
+            String fileName = file.getAbsolutePath();
+            sendText(getTargetTalker(), fileName);
+            int idx = fileName.lastIndexOf(".");
+            String ext = fileName.substring(idx + 1);
+            if (ext.equals("jpg")) {
+                sendImage(getTargetTalker(), file.getAbsolutePath(), "wxe3ad19e142df87b3");
+            }
+            if (ext.equals("png")) {
+                sendImage(getTargetTalker(), file.getAbsolutePath(), "wxe3ad19e142df87b3");
+            }
+            if (ext.equals("gif")) {
+                shareFile(getTargetTalker(), "", file.getAbsolutePath(),
+                        "wxe3ad19e142df87b3");
+            }
+            if (ext.equals("webp")) {
+                shareFile(getTargetTalker(), "", file.getAbsolutePath(),
+                        "wxe3ad19e142df87b3");
+            }
+            // shareFile(getTargetTalker(), "123", file.getAbsolutePath(),
             // "wxe3ad19e142df87b3");
-            // }
-            // if (ext.equals("webp")) {
-            // shareFile(getTargetTalker(), "", file.getAbsolutePath(),
-            // "wxe3ad19e142df87b3");
-            // }
-            shareFile(getTargetTalker(), "123", file.getAbsolutePath(), "wxe3ad19e142df87b3");
             // 下载成功后，继续下一个
             downloadSequentially(json, index + 1);
         }
